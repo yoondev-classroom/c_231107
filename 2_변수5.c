@@ -37,7 +37,7 @@ int main(void)
 
 // sizeof(식별자) or sizeof 식별자
 // sizeof(타입)
-
+#if 0
 int main(void)
 {
     int n = 42;
@@ -51,6 +51,27 @@ int main(void)
     printf("%zu\n", sizeof(x));
     printf("%zu\n", sizeof x);
     printf("%zu\n", sizeof(int[3]));
+
+    return 0;
+}
+#endif
+
+// - 변수는 메모리에 할당됩니다.
+// - 변수가 할당된 메모리에 식별자를 통해서
+//   접근할 수 있습니다.
+// - & 연산자를 이용하면, 할당된 메모리의 주소값(위치)를 알 수 있습니다.
+// - 주소를 출력할 때는 %p 서식을 사용합니다.
+
+int global = 42;
+
+int main(void)
+{
+    int n = 42;
+    static int n2 = 100;
+
+    printf("%p\n", &global);
+    printf("%p\n", &n);
+    printf("%p\n", &n2);
 
     return 0;
 }
