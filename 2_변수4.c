@@ -6,12 +6,16 @@
 extern int n;
 // 전역 변수를 선언할 때는,
 // extern을 명시하는 것이 좋습니다.
-void foo(void);
+extern void foo(void);
 // => 위의 선언들이 헤더를 통해
 //    제공됩니다.
 
+extern int password;
+
 int main(void)
 {
+    printf("%d\n", password);
+
     printf("n: %d\n", n);
 
     foo();
