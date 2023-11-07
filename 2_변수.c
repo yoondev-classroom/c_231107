@@ -61,6 +61,8 @@ int main(void)
 // - 실수 타입은 오차가 존재합니다.
 // - 실수 타입은 동등성 비교를 수행할때 주의가 필요합니다.
 
+// https//devdocs.io
+#if 0
 #include <math.h>
 
 int main(void)
@@ -76,6 +78,34 @@ int main(void)
     } else {
         printf("다르다\n");
     }
+
+    return 0;
+}
+#endif
+
+// C언어에는 정통적으로 참/거짓을 위한 별도의 타입을 존재하지 않았습니다.
+// => C99에 _Bool 타입이 도입되었습니다.
+#if 0
+#include <stdbool.h>
+
+int main(void)
+{
+    _Bool a = 0; /* 거짓 */
+    _Bool b = 1; /* 참 */
+
+    bool a2 = false;
+    bool b2 = true;
+}
+#endif
+
+typedef int BOOL;
+#define TRUE 1
+#define FALSE 0
+
+int main(void)
+{
+    BOOL b1 = TRUE;
+    BOOL b2 = FALSE;
 
     return 0;
 }
