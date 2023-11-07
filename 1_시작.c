@@ -31,9 +31,24 @@
 // - c11, c14, c17, c23
 
 #include <stdio.h>
+#include <stdlib.h>
+
+// 4. 프로그램이 시작하였을 때,
+//    가장 먼저 수행되는 함수입니다.
+//  => Entry Point(진입점)
+
+void foo(void) { } // 1
+void goo() { } // 2
 
 int main(void)
 {
+    // foo(42);
+    goo(42);
+
     printf("Hello, C\n");
+
     return 0;
+    // 성공을 의미합니다.
+
+    // return EXIT_SUCCESS;
 }
