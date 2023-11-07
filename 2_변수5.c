@@ -18,6 +18,7 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
     const int n = 42;
@@ -25,6 +26,31 @@ int main(void)
 
     // n = 100; /* 컴파일 오류 */
     // const int n; /* 이상한 코드 */
+
+    return 0;
+}
+#endif
+
+// - 변수의 크기는 타입에 의해서 결정됩니다.
+// - 변수의 크기 또는 타입의 크기를 구할 때
+//    sizeof 연산자를 이용하면 됩니다.
+
+// sizeof(식별자) or sizeof 식별자
+// sizeof(타입)
+
+int main(void)
+{
+    int n = 42;
+    // n: int
+    printf("%zu\n", sizeof(n));
+    printf("%zu\n", sizeof n);
+    printf("%zu\n", sizeof(int));
+
+    int x[3];
+    // x: int[3]
+    printf("%zu\n", sizeof(x));
+    printf("%zu\n", sizeof x);
+    printf("%zu\n", sizeof(int[3]));
 
     return 0;
 }
