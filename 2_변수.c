@@ -34,3 +34,48 @@ int main(void)
     return 0;
 }
 #endif
+
+#include <stdio.h>
+// * 실수 타입
+// => 플랫폼과 컴파일러에 따라 달라질 수 있습니다.
+// typedef float float32_t;
+// typedef double float64_t;
+
+// - float
+// - double
+// - long double
+
+#if 0
+int main(void)
+{
+    // sizeof -> size_t: %zu
+
+    printf("%zu\n", sizeof(float));
+    printf("%zu\n", sizeof(double));
+    printf("%zu\n", sizeof(long double));
+
+    return 0;
+}
+#endif
+
+// - 실수 타입은 오차가 존재합니다.
+// - 실수 타입은 동등성 비교를 수행할때 주의가 필요합니다.
+
+#include <math.h>
+
+int main(void)
+{
+    double a = 0.7;
+    double b = 0.1 * 7;
+
+    // if (a == b) {
+
+    // a-b
+    if (fabs(a - b) < 0.0000000001) {
+        printf("같다\n");
+    } else {
+        printf("다르다\n");
+    }
+
+    return 0;
+}
