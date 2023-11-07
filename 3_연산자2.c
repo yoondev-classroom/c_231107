@@ -88,7 +88,9 @@ int main(void)
     //      반드시 괄호를 사용해야 합니다.
 
     // d = ++a || (++b && c++);
-    d = ++a || ++b && c++;
+    // d = ++a || ++b && c++;
+
+    d = ++a && ++b || c++;
     printf("%d %d %d %d\n", a, b, c, d);
 
     return 0;
