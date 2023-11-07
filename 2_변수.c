@@ -19,6 +19,7 @@
 // - long / unsigned long
 // - long long / unsigned long long
 
+#if 0
 #include <stdint.h>
 
 int main(void)
@@ -28,5 +29,8 @@ int main(void)
     uint32_t c;
     uint64_t d;
 
+    
+
     return 0;
 }
+#endif
