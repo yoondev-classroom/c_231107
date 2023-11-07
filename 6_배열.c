@@ -45,6 +45,10 @@ int main(void)
 // 배열의 길이를 구할 때,
 // - sizeof(arr) / sizeof(arr[0])
 
+// - sizeof(arr) / sizeof(int)
+// => 문제점: 배열 요소의 타입이 변경될 경우,
+//          코드가 수정되어야 합니다.
+
 int main(void)
 {
     // int arr[3] = {}; /* 표준 X */
