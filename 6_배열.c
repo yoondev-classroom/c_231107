@@ -42,14 +42,19 @@ int main(void)
 }
 #endif
 
+// 배열의 길이를 구할 때,
+// - sizeof(arr) / sizeof(arr[0])
+
 int main(void)
 {
     // int arr[3] = {}; /* 표준 X */
 
     // int arr[3] = { 0, };
-    int arr[3] = { 0 };
+    int arr[5] = { 0 };
 
-    for (int i = 0; i < 3; i++) {
+    size_t len = sizeof(arr) / sizeof(arr[0]);
+
+    for (int i = 0; i < len; i++) {
         printf("%d\n", arr[i]);
     }
 
