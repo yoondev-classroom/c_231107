@@ -44,9 +44,9 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
-
     int n;
     int* p1 = &n;
     //  p1: int*
@@ -66,6 +66,35 @@ int main(void)
     printf("%d\n", **p); // p[0][0]
     printf("%d\n", *(*p + 1)); // p[0][1]
     printf("%d\n", **(p + 2)); // p[2][0]
+
+    return 0;
+}
+#endif
+
+void print_array(int* x, int n)
+{
+    for (int i = 0; i < n; i++) {
+        printf("%d\n", x[i]);
+    }
+}
+
+void print_array2(int (*x)[2], int len)
+{
+    for (int i = 0; i < len; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("%d\n", x[i][j]);
+        }
+    }
+}
+
+int main(void)
+{
+    int x[5] = { 1, 2, 3, 4, 5 };
+    print_array(x, 5);
+
+    // [ int[2] ][ int[2] ][ int[2] ]
+    int y[3][2] = { 1, 2, 3, 4, 5, 6 };
+    print_array2(y, 3);
 
     return 0;
 }
