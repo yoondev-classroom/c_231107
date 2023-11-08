@@ -71,6 +71,7 @@ int main(void)
 }
 #endif
 
+#if 0
 void print_array(int* x, int n)
 {
     for (int i = 0; i < n; i++) {
@@ -95,6 +96,38 @@ int main(void)
     // [ int[2] ][ int[2] ][ int[2] ]
     int y[3][2] = { 1, 2, 3, 4, 5, 6 };
     print_array2(y, 3);
+
+    return 0;
+}
+#endif
+
+// [ int[2] ][ int[2] ][ int[2] ]
+
+// int arr[3][2]
+//  y: 3
+//  x: 2
+
+void print_array(int* arr, int y, int x)
+{
+    for (int i = 0; i < y; i++) {
+        for (int j = 0; j < x; j++) {
+
+            // arr[i][j];
+            // *(*(arr + 1) + 2)
+            printf("%5d", *(arr + i * x + j));
+        }
+        printf("\n");
+    }
+}
+
+int main(void)
+{
+    int x[6] = { 1, 2, 3, 4, 5, 6 };
+    // int x[3][2]
+    // int x[2][3]
+    // int x[6][1]
+    // int x[1][6]
+    print_array(x, 2, 3);
 
     return 0;
 }
