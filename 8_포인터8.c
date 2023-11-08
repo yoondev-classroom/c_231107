@@ -34,7 +34,7 @@ int main(void)
 // => 같은 배열안에서만 사용해야 합니다.
 //    주소 간의 상대적 위치(오프셋)을 구할 때 사용합니다.
 //    (p1 - p2) / sizeof(대상체 타입)
-
+#if 0
 int main(void)
 {
     //                      p1
@@ -51,3 +51,23 @@ int main(void)
 
     return 0;
 }
+#endif
+
+// **      *
+// pp ---> p ---> n
+#if 0
+int main(void)
+{
+    int n = 10;
+    int* p = &n;
+    //  p: int*
+    // *p: int
+
+    int** pp = &p;
+    //   pp: int**
+    //  *pp: int*
+    // **pp: int
+
+    return 0;
+}
+#endif
