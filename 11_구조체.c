@@ -56,6 +56,7 @@ struct Complex {
 
 // int add(int a, int b) {}
 
+#if 0
 struct Complex add(
     struct Complex c1, struct Complex c2)
 {
@@ -85,3 +86,62 @@ int main(void)
 
     return 0;
 }
+#endif
+
+#if 0
+struct Complex add(
+    const struct Complex* c1,
+    const struct Complex* c2)
+{
+    struct Complex result;
+
+    result.real = c1->real + c2->real;
+    result.image = c1->image + c2->image;
+
+    return result;
+}
+
+int main(void)
+{
+
+    struct Complex c1 = { .real = 10, .image = 5 };
+    struct Complex c2 = { .real = 20, .image = 3 };
+
+    printf("%d + %di\n", c1.real, c1.image);
+    printf("%d + %di\n", c2.real, c2.image);
+
+    struct Complex result = add(&c1, &c2);
+
+    printf("%d + %di\n", result.real, result.image);
+
+    return 0;
+}
+#endif
+
+void add(
+    const struct Complex* c1,
+    const struct Complex* c2,
+    struct Complex* result)
+{
+    result->real = c1->real + c2->real;
+    result->image = c1->image + c2->image;
+}
+
+int main(void)
+{
+
+    struct Complex c1 = { .real = 10, .image = 5 };
+    struct Complex c2 = { .real = 20, .image = 3 };
+
+    printf("%d + %di\n", c1.real, c1.image);
+    printf("%d + %di\n", c2.real, c2.image);
+
+    struct Complex result;
+    add(&c1, &c2, &result);
+
+    printf("%d + %di\n", result.real, result.image);
+
+    return 0;
+}
+
+// chansik@yoondev.io
