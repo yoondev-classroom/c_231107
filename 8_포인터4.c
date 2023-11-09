@@ -30,6 +30,9 @@ int main(void)
     printf("%d\n", x[0]);
     printf("%d\n", x[1]);
     printf("%d\n", x[2]);
+    //            *(x + 2)
+    //            *(2 + x)
+    printf("%d\n", 2 [x]);
 
     return 0;
 }
@@ -175,6 +178,7 @@ int main(void)
 }
 #endif
 
+#if 0
 int main(void)
 {
     int x[3] = { 10, 20, 30 };
@@ -185,6 +189,18 @@ int main(void)
     // = &*(x + 0)
     // = x + 0
     // = x
+
+    return 0;
+}
+#endif
+
+// OK
+/* OK */
+
+int main(void)
+{
+    printf("Hello, C\n"); // ??/
+    printf("Hello, C\n"); /* OK */
 
     return 0;
 }
