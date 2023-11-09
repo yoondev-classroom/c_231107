@@ -37,13 +37,18 @@ int main(void)
     int n = 0x12345678;
 
     char* pc = (char*)&n;
-    printf("%x\n", *pc);
+    // printf("%x\n", *pc);
+    //                *(pc + 0)
+    printf("%x\n", pc[0]);
+    printf("%x\n", pc[1]);
+    printf("%x\n", pc[2]);
+    printf("%x\n", pc[3]);
 
     return 0;
 }
 #endif
 
-#if 0
+#if 1
 // 위험한 코드
 // => 포인터를 통해 메모리를 해석할 때는
 //    주의해야 합니다.
@@ -60,3 +65,5 @@ int main(void)
     return 0;
 }
 #endif
+
+// https://cnst.livejournal.com/24040.html
