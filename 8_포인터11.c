@@ -82,7 +82,7 @@ int cmp1(const void* a, const void* b)
     const double* pa = a;
     const double* pb = b;
 
-    return *pa - *pb;
+    return *pa > *pb ? 1 : -1;
 }
 
 #include <stdlib.h> // qsort

@@ -25,6 +25,7 @@ int main(void)
 // 3. void*는 구체적인 포인터 타입으로의 암묵적인 변환이 허용됩니다.
 //   => void*의 주소를 연산하기 위해서는 구체적인 포인터 타입으로
 //      담아서 사용해야 합니다.
+#if 0
 int main(void)
 {
     int a = 10;
@@ -43,6 +44,15 @@ int main(void)
     printf("%c\n", *(char*)p);
 
     p = &d;
+
+    return 0;
+}
+#endif
+
+int main(void)
+{
+    void* p = NULL;
+    printf("%p\n", p + 1); /* 표준이 아닙니다. */
 
     return 0;
 }

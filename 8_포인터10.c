@@ -58,7 +58,7 @@ int main(void)
 }
 #endif
 
-#if 0
+#if 1
 void sort(int* x, int n, int (*cmp)(int, int))
 {
     for (int i = 0; i < n - 1; i++) {
